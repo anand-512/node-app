@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="panel">
+        <div class="panel-body">
+            <%if (messages.info) { %>
+            <div role="alert" class="alert alert-info">
+                <% messages.info.forEach(function(data){ %>
+                <div><%= data.msg %></div>
+                <% });%>
+            </div>
+            <% } %>
+            <%if (messages.error) { %>
+            <div role="alert" class="alert alert-danger">
+                <% messages.error.forEach(function(data){ %>
+                <div><%= data.msg %></div>
+                <% });%>
+            </div>
+            <% } %>
+            <form method="POST">
+                <legend>Forgot Password</legend>
+                <div class="form-group">
+                    <p>Enter your email address below and we'll send you password reset instructions.</p>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" class="form-control" autofocus>
+                </div>
+                <button type="submit" class="btn btn-success">Reset Password</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

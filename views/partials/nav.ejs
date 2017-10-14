@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle collapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><%= siteName %></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="<% if(title == 'Home') { %>active<% } %>"><a href="/">Home</a></li>
+                <li class="<% if(title == 'Contact') { %>active<% } %>"><a href="/contact">Contact</a></li>
+                <li class="<% if(title == 'Chat') { %>active<% } %>"><a href="/chat">Chat</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <%if (user) { %>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="navbar-avatar dropdown-toggle">
+                        <%if (user.get('picture')) { %>
+                        <img src="<%= user.get('picture') %>">
+                        <% } else { %>
+                        <img src="<%= user.get('gravatar') %>">
+                        <% } %>
+                        <%if (user.get('name')) { %>
+                        <%= user.get('name') %>
+                        <% } else { %>
+                        <%= user.get('email') %>
+                        <% } %>
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/account">My Account</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+                <% } else { %>
+                <li class="<% if(title == 'Log in') { %>active<% } %>"><a href="/login">Log in</a></li>
+                <li class="<% if(title == 'Sign up') { %>active<% }%>"><a href="/signup">Sign up</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

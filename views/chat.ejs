@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <link href="/css/chat.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<% include partials/nav %>
+
+<div class="container-fluid">
+    <div id="mario-chat">
+        <h2>Chat Application</h2>
+        <div id="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
+        </div>
+
+        <div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:auto;">
+            <b>ROOMS</b>
+            <div id="rooms"></div>
+        </div>
+
+        <div style="float:left;width:300px;height:250px;overflow:auto;padding:10px;">
+            <div id="room creation"></div>
+            <input id="roomname" style="width:200px; border: 1px solid black;" />
+            <input type="button" id="roombutton" value="create room" />
+        </div>
+
+        <input id="handle" type="hidden" placeholder="Handle" readonly value="<%= user.get('name') %>" />
+        <input id="message" type="text" placeholder="Message" />
+        <button id="send">Send</button>
+    </div>
+</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/chat.js"></script>
+<script src="/js/lib/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+</html>
