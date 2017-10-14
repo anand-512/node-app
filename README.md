@@ -1,0 +1,12 @@
+### Configuration
+- **Platform:** node
+- **Framework**: express
+- **Template Engine**: ejs
+- **CSS Framework**: bootstrap
+- **CSS Preprocessor**: css
+- **JavaScript Framework**: 
+- **Build Tool**: none
+- **Unit Testing**: none
+- **Database**: mysql
+- **Authentication**: google,email,facebook
+- **Deployment**: none
