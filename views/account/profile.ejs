@@ -92,40 +92,6 @@
             </form>
         </div>
     </div>
-    <div class="panel">
-        <div class="panel-body">
-            <div class="form-horizontal">
-                <legend>Linked Accounts</legend>
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-4">
-                        <%if (user.get('facebook')) { %>
-                        <p><a href="/unlink/facebook" class="text-danger">Unlink your Facebook account</a></p>
-                        <% } else { %>
-                        <p><a href="/auth/facebook">Link your Facebook account</a></p>
-                        <% } %>
-                        <%if (user.get('google')) { %>
-                        <p><a href="/unlink/google" class="text-danger">Unlink your Google account</a></p>
-                        <% } else { %>
-                        <p><a href="/auth/google">Link your Google account</a></p>
-                        <% } %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="panel-body">
-            <form method="POST" action="/account?_method=DELETE" class="form-horizontal">
-                <legend>Delete Account</legend>
-                <div class="form-group">
-                    <p class="col-sm-offset-3 col-sm-9">You can delete your account, but keep in mind this action is irreversible.</p>
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="btn btn-danger">Delete my account</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 
 <% include ../partials/footer %>
